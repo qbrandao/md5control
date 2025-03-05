@@ -10,14 +10,10 @@ if [ "$#" -lt 2 ]; then
     exit 1
 fi
 
-if [$1 == "test"]
-then
-    if [$2 == true]
-    then
-        if [$2[0] == "."]
-        then #extention
-            for f in *$2;
-            do
+if [$1 == "test"]; then
+    if [$2 == true]; then
+        if [$2[0] == "."]; then #extention
+            for f in *$2; do
                 md5raw_new=$(md5sum $f.md5)
                 md5_new=(${md5raw_new//\t/ })
                 md5raw_old=$(more $f.md5)
@@ -46,14 +42,10 @@ then
         echo $usage $sub $ex
         exit 1
     fi
-if [$1 == "create"]
-then
-    if [$2 == true]
-    then
-        if [$2[0] == "."]
-        then #extention
-            for f in *$2;
-            do
+if [$1 == "create"]; then
+    if [$2 == true]; then
+        if [$2[0] == "."]; then
+            for f in *$2; do
                 md5sum $f > $f.md5
             done
         else
