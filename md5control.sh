@@ -40,8 +40,7 @@ if [$1 == "test"]; then
         echo $usage $sub $ex
         exit 1
     fi
-fi
-if [$1 == "create"]; then
+elif [$1 == "create"]; then
     if [$2 == true]; then
         if [$2[0] == "."]; then
             for f in *$2; do
