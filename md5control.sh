@@ -10,7 +10,7 @@ if [ "$#" -lt 2 ]; then
     exit 1
 fi
 
-if [$1 == "test"]; then
+if ["$1" == "test"]; then
     if [$2 == true]; then
         if [$2[0] == "."]; then #extention
             for f in *$2; do
@@ -40,7 +40,7 @@ if [$1 == "test"]; then
         echo $usage $sub $ex
         exit 1
     fi
-elif [$1 == "create"]; then
+elif ["$1" == "create"]; then
     if [$2 == true]; then
         if [$2[0] == "."]; then
             for f in *$2; do
