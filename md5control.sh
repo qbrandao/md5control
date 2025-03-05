@@ -18,8 +18,7 @@ if [$1 == "test"]; then
                 md5_new=(${md5raw_new//\t/ })
                 md5raw_old=$(more $f.md5)
                 md5_old=(${md5raw_old//\t/ })
-                if [md5_new[0] == md5_old[0]]
-                then
+                if [md5_new[0] == md5_old[0]]; then
                     echo "$f is OK!"
                 else
                     echo "$f ERROR MD5 KEY IS NOT THE SAME!"
@@ -30,8 +29,7 @@ if [$1 == "test"]; then
             md5_new=(${md5raw_new//\t/ })
             md5raw_old=$(more $2.md5)
             md5_old=(${md5raw_old//\t/ })
-            if [md5_new[0] == md5_old[0]]
-            then
+            if [md5_new[0] == md5_old[0]]; then
                 echo "$2 is OK!"
             else
                 echo "$2 ERROR MD5 KEY IS NOT THE SAME!"
