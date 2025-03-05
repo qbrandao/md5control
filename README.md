@@ -11,4 +11,3 @@ subcommand:
 example:
 
 `md5control.sh create .gz`
-
