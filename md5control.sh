@@ -11,8 +11,8 @@ if [ "$#" -lt 2 ]; then
 fi
 
 if [ "$1" == "test" ]; then
-    if [ $2 == true ]; then
-        if [ $2[0] == "." ]; then #extention
+    if [ -n "$2" ]; then
+        if [ "$2" == .* ]; then #extention
             for f in *$2; do
                 md5raw_new=$(md5sum $f.md5)
                 md5_new=(${md5raw_new//\t/ })
