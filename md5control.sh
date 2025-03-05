@@ -4,6 +4,12 @@ usage="Usage: $0 [subcommand] [filename or extension]\n"
 sub="\nsubcommand:\n$0 test [filename or extension]\n$0 create [filename or extension]\n"
 ex="\nexample:\n$0 create .gz"
 
+if [ "$#" -lt 2 ]; then
+    echo -e "ERROR: Filename or Extension argument is missing!"
+    echo -e "$usage$sub$ex"
+    exit 1
+fi
+
 if [$1 == "test"]
 then
     if [$2 == true]
@@ -38,6 +44,7 @@ then
     else
         echo -e "ERROR: Filename or Extention argument is missing!"
         echo $usage $sub $ex
+        exit 1
     fi
 if [$1 == "create"]
 then
@@ -55,6 +62,7 @@ then
     else
         echo -e "ERROR: Filename or Extention argument is missing!"
         echo $usage $sub $ex
+        exit 1
     fi
 else
     echo $usage $sub $ex
