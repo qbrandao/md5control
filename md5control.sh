@@ -19,9 +19,9 @@ if ["$1" == "test"]; then
                 md5raw_old=$(more $f.md5)
                 md5_old=(${md5raw_old//\t/ })
                 if [md5_new[0] == md5_old[0]]; then
-                    echo "$f is OK!"
+                    echo -e "$f is OK!"
                 else
-                    echo "$f ERROR MD5 KEY IS NOT THE SAME!"
+                    echo -e "$f ERROR MD5 KEY IS NOT THE SAME!"
                 fi
             done
         else
@@ -30,14 +30,14 @@ if ["$1" == "test"]; then
             md5raw_old=$(more $2.md5)
             md5_old=(${md5raw_old//\t/ })
             if [md5_new[0] == md5_old[0]]; then
-                echo "$2 is OK!"
+                echo -e "$2 is OK!"
             else
-                echo "$2 ERROR MD5 KEY IS NOT THE SAME!"
+                echo -e "$2 ERROR MD5 KEY IS NOT THE SAME!"
             fi
         fi
     else
         echo -e "ERROR: Filename or Extention argument is missing!"
-        echo $usage $sub $ex
+        echo -e $usage $sub $ex
         exit 1
     fi
 elif ["$1" == "create"]; then
@@ -51,10 +51,10 @@ elif ["$1" == "create"]; then
         fi
     else
         echo -e "ERROR: Filename or Extention argument is missing!"
-        echo $usage $sub $ex
+        echo -e $usage $sub $ex
         exit 1
     fi
 else
-    echo $usage $sub $ex
+    echo -e $usage $sub $ex
 fi
 
