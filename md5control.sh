@@ -12,7 +12,7 @@ fi
 
 if [ "$1" == "test" ]; then
     if [ -n "$2" ]; then
-        if [ "$2" == .* ]; then #extention
+        if [[ "$2" == .* ]]; then #extention
             for f in *"$2"; do
                 if [[ -f "$f.md5" ]]; then
                     md5raw_new=$(md5sum $f)
