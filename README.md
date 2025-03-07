@@ -1,5 +1,7 @@
 # md5control
 
+To run md5control parallel is required.
+
 Usage: `md5control.sh [subcommand] [filename or extension] [threads]`
 
 subcommand:
